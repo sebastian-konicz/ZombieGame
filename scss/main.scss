@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.plansza{
+  width: 100%;
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+
+  background: rgb(122,188,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(122,188,255,1) 0%, rgba(122,188,255,1) 50%, rgba(88,188,73,1) 50%, rgba(88,188,73,1) 50%, rgba(52,170,46,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(122,188,255,1) 0%,rgba(122,188,255,1) 50%,rgba(88,188,73,1) 50%,rgba(88,188,73,1) 50%,rgba(52,170,46,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(122,188,255,1) 0%,rgba(122,188,255,1) 50%,rgba(88,188,73,1) 50%,rgba(88,188,73,1) 50%,rgba(52,170,46,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#34aa2e',GradientType=0 ); /* IE6-9 */
+}
+
+.boom{
+  width: 64px;
+  height: 64px;
+  background: url('../images/explosion.png'); //left center;
+  animation: boom 1s steps(5);
+  position: absolute;
+}
+
+
+.zombie {
+  width: 200px;
+  height: 312px;
+  background: url('../images/walkingdead.png') left center;
+  position: absolute;
+  left: 100%;
+  bottom: 200px;
+  cursor: crosshair;
+
+
+  animation:
+          zombieMove 0.5s steps(10) infinite,
+          zombieWalk 10s 1;
+
+}
+
+@keyframes boom {
+  100% {background-position: -320px 0; }
+}
+
+@keyframes zombieMove {
+  100% {background-position: -2000px 0; }
+}
+
+@keyframes zombieWalk {
+  100% {left: -300px; }
+}
