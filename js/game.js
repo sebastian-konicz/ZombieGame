@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
-    console.log("lalala");
+
 
     var board = document.querySelector(".plansza");
 
@@ -45,14 +45,16 @@ document.addEventListener("DOMContentLoaded", function(){
         zombie.addEventListener("click", function(event){
             this.remove();
 
-            var positionX= event.screenX;
-            var positionY = event.screenY;
-            console.log(positionX);
-            console.log(positionY);
+            var positionX= event.clientX;
+            var positionY = event.clientY;
+
+
             var boom = document.createElement("div");
+
             boom.classList.add("boom");
             boom.style.left = positionX +"px";
             boom.style.top = positionY +"px";
+            boom.style.transform = "scale(3)"
 
             board.appendChild(boom);
             boom.addEventListener("animationend", function(event){
